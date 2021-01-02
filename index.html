@@ -1,4 +1,15 @@
-import axios from "axios"
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="preload" href="https://css-tricks.com/wp-json/wp/v2/posts?page=1&per_page=20">
+</head>
+<body>
+    <script>
+        
+        import axios from "axios"
 let dynamicRoutes = () => {
   const routes = axios
     .get("https://css-tricks.com/wp-json/wp/v2/posts?page=1&per_page=20")
@@ -8,26 +19,6 @@ let dynamicRoutes = () => {
   console.log(routes)
   return routes
 }
-import axios from "axios"
-let dynamicRoutes = () => {
-(async () => {
-  try {
-    const routes = await axios.get('https://css-tricks.com/wp-json/wp/v2/posts?page=1&per_page=20')
-    console.log(routes.data.url);
-    console.log(routes.data.explanation);
-  } catch (error) {
-    console.log(error.routes.body);
-    axios.then(res => {
-      return res.data.map(post => `/blog/${post.slug}`)
-    })
-    console.log(routes)
-  return routes
-}
-
-
-
-
-
 
 export default {
   mode: "universal",
@@ -87,3 +78,6 @@ export default {
     extend(config, ctx) {}
   }
 }
+    </script>
+</body>
+</html>
